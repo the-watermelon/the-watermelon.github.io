@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />	
+		<meta name="description" content="基本DOM操纵">							<!-- 描述网页内容 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--设置网页尺寸自适应-->
+		<link rel="icon" type="image/x-icon" href="琪亚娜.ico">
+		<meta name="author" content="赵光宇"> 									<!--定义网页的作者-->
+		<title>JS内置对象</title>
+		<style>
+			header{
+				height: 40px;
+				font-size: 20px;
+				color: white;
+				background-color: #333333;
+				text-align: center;
+				line-height: 40px;
+			}
+			body{
+				margin: 0;
+				font-size: 16px;
+			}
+			article{
+				width: 600px;
+				margin: 0 auto;
+			}
+			article .title{
+				background-color: #008080;
+				color: white;
+				text-align: center;
+				font-size: 20px;
+				padding: 8px 0;
+				font-weight: bold;
+				margin-top: 20px;
+			}
+			.a .a1{
+				font-size: 14px;
+				margin: 3px 0;
+			}
+			.a .a2{
+				border: solid 1px #008080;
+				text-align: center;
+			}
+			.b .b1{
+				display: flex;
+				border: solid 1px #008080;
+			}
+			.b .b1 .left{
+				padding: 3px 0 0 3px;
+			}
+			.b .b1 .right{
+				line-height: 2.5em;
+				padding: 20px 0 0 20px;
+			}
+			.b .b1 .right span{
+				color: red;
+				font-weight: bold;
+			}
+			.b .b1 .right .zhu{
+				color: #666666;
+				font-size: 14px;
+				padding-left: 3em;
+				line-height: 1.5em;
+			}
+			.c .c1{
+				border: solid 1px #008080;
+			}
+			.c .c2{
+				text-align: center;
+				padding: 10px 0;
+			}
+			.c .c3{
+				text-align: right;
+				padding: 0 60px 10px 0;
+			}
+			.line{
+				font-size: 14px;
+				text-align: center;
+				border-bottom: dotted 2px #CCCCCC;
+				margin: 20px 0 30px 0;
+			}
+			.line span{
+				position: relative;
+				top: 8px;
+				background-color: white;
+				padding: 0 10px;
+			}
+			footer{
+				height: 35px;
+				background-color: #666666;
+				text-align: center;
+				line-height: 35px;
+				margin-top: 20px;
+			}
+			footer span{
+				color: white;
+				font-size: 14px;
+				padding: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div>JavaScript内置对象(1)</div>
+		</header>
+		<article>
+			<div class="a">
+				<div class="title">1、调节文字大小</div>
+				<div class="a1">文字大小：<input id="m" type="text" size="2" value="16" onchange="setFontSize()">像素</div>
+				<div id="n" class="a2">
+					<p>七夕</p>
+					<p>作者：杜牧</p>
+					<p>银烛秋光冷画屏，轻罗小扇扑流萤。<br />
+                                         天阶夜色凉如水，卧看牵牛织女星。</p>
+				</div>
+			</div>
+			<script>
+				function setFontSize(){
+					var size = document.getElementById("m").value;
+					if(isNaN(size)){
+						alert("请输入数字");
+						return;
+					}
+					if(size<0){
+						alert("数值不合法");
+						return;
+					}
+					document.getElementById("n").style.fontSize = size+"px";
+				}
+			</script>
+			<div class="line"><span>分割线</span></div>
+			<div class="b">
+				<div class="title">2、计算商品价格</div>
+				<div class="b1">
+					<div class="left"><img src="img/yg1.jpg"></div>
+					<div class="right">
+						<div>商品名：男士衬衫</div>
+						<div>单价：<span>¥218.00</span></div>
+						<div>数量:<input type="button" value="-" onclick="sub()"><input id="num" type="text" size="2" value="0" onchange="changeNum()"><input type="button" value="+" onclick="add()"></div>
+						<div class="zhu">购买5件及以上打85折</div>
+						<div>总价格：<span id="price" >¥0</span></div>
+					</div>
+				</div>
+			</div>
+			<script>
+				function add(){
+					var num = document.getElementById("num").value;
+					num++;
+					document.getElementById("num").value = num;
+					var price = num*218;
+					if(num>=5){
+						price *= 0.85;
+					}
+					document.getElementById("price").innerHTML = "¥"+price.toFixed(2);
+				}
+				function sub(){
+					var num = document.getElementById("num").value;
+					if(num == 0){
+						return;
+					}
+					num--;
+					document.getElementById("num").value = num;
+					var price = num*218;
+					if(num>=5){
+						price *= 0.85;
+					}
+					document.getElementById("price").innerHTML = "¥"+price.toFixed(2);
+				}
+				function changeNum(){
+					var num = document.getElementById("num").value;
+					if(isNaN(num)){
+						num = 0;
+						document.getElementById("num").value = 0;
+					}
+					if(num<0){
+						num = 0;
+						document.getElementById("num").value = 0;
+					}
+					var price = num*218;
+					if(num>=5){
+						price *= 0.85;
+					}
+					document.getElementById("price").innerHTML = "¥"+price.toFixed(2);
+				}
+			</script>
+			<div class="line"><span>分割线</span></div>
+			<div class="c">
+				<div class="title">3、随机换图</div>
+				<div class="c1">
+					<div class="c2"><img id="ya" src="img/y1.gif"></div>
+					<div class="c3"><input type="button" value="换一张" onclick="changeImg()"></div>
+				</div>
+			</div>
+			<script>
+				var x = 0;
+				function changeImg(){
+					var y = Math.floor(1+5*Math.random());
+					while(n==y){
+						y = Math.floor(1+5*Math.random());
+					}
+					n = y;
+					document.getElementById("ya").src = "img/y"+y+".gif";
+				}
+			</script>
+		</article>
+		<footer>
+			<span>班级：20外包</span>
+			<span>学号：2014127037</span>
+			<span>姓名：赵光宇</span>
+		</footer>
+	</body>
+</html>
+
