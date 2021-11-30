@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.main {
+		        border: solid 10px #ff0852;
+		        margin: 40px auto;
+		        width: 75%;
+		        height: 600px;
+		        background-color: #ffffff;
+		    }
+			.main .user {
+				margin: 20px 0 0 20px;
+				font-size: 25px;
+			}
+			table{
+				margin:0 auto;	
+			}
+			tr .q{
+				text-align: center;
+			}			
+		</style>
+	</head>
+	<body>
+		 <div class="main">
+		    <div class="user">
+		        <span style="color: #ffe000;">新用户登录</span>
+		        <br>
+		        <span style="color: #999999;">USER SIGN IN</span> 
+		    </div>
+			<table width="300px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td align="center" class="q" colspan="2">登录</td>
+				</tr>
+				<tr>
+					<td width="30%" colspan="1" style="padding: 0 15px 0 15px; text-align: right;">用户名</td>					
+					<td width="70%" colspan="1">
+						<input  style="width: 200px;border-radius: 5px;" type="text" placeholder="请输入用户名" name="pwd" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1" style="padding: 0 15px 0 15px; text-align: right;">密码</td>
+					<td colspan="1"><input style="width: 200px;border-radius: 5px;" type="text" placeholder="请输入密码" name="pwd" /></td>
+				</tr>
+				<tr>
+					<td colspan="1" style="padding: 0 15px 0 15px; text-align: right;">性别</td>
+					<td colspan="1">
+					<input type="radio" name="sex" value="男"/>男
+					<input type="radio" name="sex" value="女" />女
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1" style="padding: 0 15px 0 15px; text-align: right ;">验证码</td>
+					<td colspan="1"><input style="width: 100px;border-radius: 5px;;" type="text" placeholder="请输入验证码" name="pwd" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+					<input type="reset" value="重置" / style="margin-right: 30px;"><input type="submit" value="登录" />
+					</td>					
+				</tr>
+			</table>
+				
+		</div>
+	</body>
+</html>
