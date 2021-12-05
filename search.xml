@@ -1,3 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
+  <entry>
+    <title>Welcome to my blog</title>
+    <url>/2021/12/01/myblog/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的个人博客，第一次接触这个，有很多不知道的地方，请大家多多包涵，也请大家提出不足的地方，先点进来听首歌吧"><a href="#欢迎来到我的个人博客，第一次接触这个，有很多不知道的地方，请大家多多包涵，也请大家提出不足的地方，先点进来听首歌吧" class="headerlink" title="欢迎来到我的个人博客，第一次接触这个，有很多不知道的地方，请大家多多包涵，也请大家提出不足的地方，先点进来听首歌吧"></a><div style="color:hotpink">欢迎来到我的个人博客，第一次接触这个，有很多不知道的地方，请大家多多包涵，也请大家提出不足的地方，先点进来听首歌吧</div></h1>]]></content>
+      <categories>
+        <category>分类</category>
+      </categories>
+      <tags>
+        <tag>标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这是一篇文章</title>
+    <url>/2021/12/01/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的个人博客123"><a href="#欢迎来到我的个人博客123" class="headerlink" title="欢迎来到我的个人博客123"></a>欢迎来到我的个人博客123</h1>]]></content>
+      <categories>
+        <category>分类123</category>
+      </categories>
+      <tags>
+        <tag>标签123</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实训笔记</title>
+    <url>/2021/12/01/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a><div style="color: #FF0852;">HTML</div></h1><h2 id="软件结构"><a href="#软件结构" class="headerlink" title="软件结构"></a><div style="color: blue">软件结构</div></h2><h3 id="C-s-client-server-客户端-服务器"><a href="#C-s-client-server-客户端-服务器" class="headerlink" title="C/s : client / server 客户端/服务器"></a><div style="color: hotpink">C/s : client / server 客户端/服务器<div></h3><p>​ 服务器发生改变，客户端必须改</p>
+<p>​ Eg : QQ</p>
+<p>​ 最大特点 : 安全</p>
+<h3 id="b-s-Browser-server-浏览器-服务器"><a href="#b-s-Browser-server-浏览器-服务器" class="headerlink" title="b/s : Browser / server 浏览器 / 服务器"></a><div style="color: hotpink">b/s : Browser / server 浏览器 / 服务器<div></h3><p>​ 服务器发生改变，客户端不需要改</p>
+<p>​ 最大特点 : 方便 , 简单</p>
+<h3 id="B-s-资源分类"><a href="#B-s-资源分类" class="headerlink" title="B/s 资源分类"></a><div style="color: hotpink">B/s 资源分类<div></h3><p>​ 静态资源 : 固定的 , 谁访问都一样</p>
+<p>​ 使用技术 : html , css , js</p>
+<p>​ 动态资源 : 不固定的 , 数据从数据库来 , 谁访问都可能不一样</p>
+<p>​ Eg : 登录成功后 , 欢迎 xxx 的登录</p>
+<p>​ 使用技术 : jsp servlet asp php</p>
+<h4 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源 :"></a><div style="color: hotpink">静态资源 :<div></h4><p>​ Html : 页面主体 , 页面框架</p>
+<p>​ Css : 美化</p>
+<p>​ Js : 可以使页面有动态效果</p>
+<h5 id="Html-超文本标记语言"><a href="#Html-超文本标记语言" class="headerlink" title="Html : 超文本标记语言"></a><div style="color: green">Html : 超文本标记语言<div></h5><p>超文本与纯文本 纯文本 : 只能保存文字 , 不能存图片 , 视频 , 不能传输样式 eg .txt 超文本 : 包含特殊标记的文本文件 eg : html .doc .md<br>标记语言 由标签组成的语言 : &lt;标签内容&gt; ​ 问题 : 1.XHTML HTML的关系 ​ 2.什么是 xml</p>
+<h5 id="Html-html-htm"><a href="#Html-html-htm" class="headerlink" title="Html : .html .htm"></a><div style="color: green">Html : .html .htm<div></h5><p>​ 网站首页 : index 或 default</p>
+<h5 id="Html-的特点"><a href="#Html-的特点" class="headerlink" title="Html 的特点 :"></a><div style="color: green">Html 的特点 :<div></h5><p>​ 1.标签分类 : 单标签 &lt;br /&gt;</p>
+<p>​ 双标签&lt;a&gt; &lt;/a&gt; &lt;A&gt; &lt;/A&gt;</p>
+<p>​ 2.不区分大小写 , 建议全部小写<br>​ 3.标签可以嵌套 , 不可以交叉</p>
+<h5 id="Html文件"><a href="#Html文件" class="headerlink" title="Html文件 :"></a><div style="color: green">Html文件 :<div></h5><p>​ 标签 :</p>
+<p>​ &lt;img src=”图片路径”/&gt;</p>
+<p>​ 相对路径与绝对路径</p>
+<p>​ 相对路径 : 以./开始 , 默认可以省略</p>
+<p>​ 绝对路径 : 以协议开始 [ files ://…http://… ftp://]</p>
+<p>​ 列表 : ul : 无序 ol : 有序</p>
+<p>​ Java集合 collection map</p>
+<p>​ Collection : list 有序 底层是数组</p>
+<p>​ set 无序 底层是链表</p>
+]]></content>
+      <categories>
+        <category>实训笔记哦</category>
+      </categories>
+      <tags>
+        <tag>实训笔记哦</tag>
+      </tags>
+  </entry>
 </search>
