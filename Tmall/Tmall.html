@@ -188,6 +188,7 @@
 				width: 670px;
 				background-color: #ffffff;
 				height: 525px;
+				border-radius: 10px;
 			}
 			#circle{
 				display: flex;
@@ -216,17 +217,58 @@
 			}
 			.no1{
 				position: absolute;
-				margin: -115px 0px;				
+				margin: -103px 0px;				
 			}
 			.no2{
 				position: absolute;
-				margin: -115px 503px;
+				margin: -103px 445px;
 				border-radius: 15px;
 			}
 			.class3{
-				width: 320px;
-				background-color: chartreuse;
+				width: 450px;
+				background-color: #f3f3f3;
 				height: 525px;
+				border-radius: 15px;
+				margin:0px 0px 0px 15px;
+			}
+			.y{
+				margin: 20px 50px 0px 120px;
+				cursor: pointer;
+			}
+			.k{
+				margin: 5px 50px 0px 140px;
+				font-size: 4px;
+				cursor: pointer;
+				color: #595959;
+				cursor: pointer;
+			}
+			.m{
+				margin: 10px 5px 0px 15px;
+				cursor: pointer;
+			}
+			.p{
+				margin: 20px 5px 0px 5px;
+				font-size: 13px;				
+			}
+			.lm{
+				border: solid 1px red;
+				background-color: #f5e5e5;
+				color: red;
+				font-size: 10px;
+				cursor: pointer;
+				margin: 20px 2px 0px 5px;
+				border-style: none;
+			}
+			.j{
+				font-size: 10px;
+				cursor: pointer;
+				margin: 20px 2px 0px 3px;
+			}
+			.cno{
+				display: flex;
+				margin: 5px 280px 0px 280px;
+				font-size: 20px;
+				color: white;
 			}
 		</style>
 	</head>
@@ -409,12 +451,12 @@
 												
 						<div class="class2">
 							<div class="area">						
-								<div><img id="lb" src="img/第一张图.png" style="width: 100%; height: 280px; border-radius: 15px;"></div>
+								<div><img id="lb" src="img/第一张图.png" style="width: 99%; height: 280px; border-radius: 15px;"></div>
 								<div id="circle"></div>	
 							</div>
 	
 							<div class="area">										
-								<div><img id="ti" src="img/第六张图.png" style="width: 100%; margin: 35px 0px 0px 0px; "></div>
+								<div><img id="ti" src="img/第六张图.png" style="width: 99%; margin: 35px 0px 0px 0px; "></div>
 								<div class="fy">
 									<div class="no1" onclick="nextPage_left()"><img id="left" src="img/翻页左.png" style="width: 16px;"></div>																												
 									<div class="no2" onclick="nextPage_right()"><img id="right" src="img/翻页右.png" style="width: 17px;"></div>
@@ -487,13 +529,53 @@
 							}
 							setInterval("nextPage_right()",4000);
 						</script>	
+						
+						
 												
-						<div class="class3">3</div>
+						<div class="class3">
+							<div class="y"><img src="img/天猫小人.png" ></div>
+							<div class="k">Hi! 你好</div>
+							<div class="m"><img src="img/双十二.png" style="width: 95%; height: 120px;"></div>	
+							<div class="p"><strong>公告</strong> 新鲜事儿都在这里～</div>
+							
+							<div style="display: flex;">
+								<div class="lm">热点</div>																	
+								<div class="j">热点设计创享家3D设计服务大赛来袭！</div>								
+							</div>
+							
+							<div style="display: flex;">
+								<div class="lm">热点</div>																	
+								<div class="j">热点全球新发现，好物开抢就现在！</div>								
+							</div>
+							
+							<div style="display: flex;">
+								<div class="lm">热点</div>																	
+								<div class="j">万款新品流行速递抢先看</div>								
+							</div>
+							
+							<div style="display: flex;">
+								<div style="margin: 40px 0px 0px 10px; cursor: pointer;"><img src="img/宝贝.png" style="width: 90%; "></div>
+								<div style="margin: 40px 0px 0px 0px; cursor: pointer;"><img src="img/店铺.png" style="width: 90%; "></div>
+								<div style="margin: 40px 0px 0px 0px; cursor: pointer;"><img src="img/收藏店铺.png" style="width: 90%; "></div>
+								<div style="margin: 40px 0px 0px 0px; cursor: pointer;"><img src="img/足迹.png" style="width: 90%; "></div>								
+							</div>
+						</div>
 					</div>
 							
 				</article>
 			</div>
 		</div>
-			
+		
+		<footer>
+			<div style="background-color: hotpink;">
+				<div class="main">
+					<div class="cno">
+						<div>学号:2014127037&nbsp;&nbsp;	</div>
+						<div>姓名:赵光宇&nbsp;&nbsp;</div>
+						<div>班级:20外包班</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
