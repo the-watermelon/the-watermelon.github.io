@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品价格</title>
+		<style type="text/css">
+			.main{
+				width:1536px;
+				margin:0px auto;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.jiage{
+				text-align: center;
+				font-size: 50px;
+				font-weight: bold;
+			}
+			.left{
+				margin-left: 300px;
+			}
+			.right{
+				margin-top: 150px;
+				margin-left: 100px;
+				line-height: 2em;
+			}
+			span{
+				color: red;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="jiage">
+				商品价格
+			</div>
+			
+			<div style="display: flex;">
+				<div class="left">
+					<img src="img/大象.jpg" >
+				</div>
+				
+				<div class="right">
+					<div>商品名：儿童拼图</div>
+					<div>单价:<span>￥99.90</span></div>
+					<div>数量: <input type="button" value="-" onclick="sub()"><input type="text" id="num" size="4" value="0" onchange="changeNum()"><input type="button" value="+" onclick="add()"></div>
+					<div style="color: #666666;font-size: 14px;padding-left: 3em;line-height: 20px;">购买5件及以上打85折</div>
+					<div>总价格:<span id="price">￥0</span></div>
+				</div>
+			</div>
+			
+			<div style="display: flex;">
+				<div class="left">
+					<img src="img/华为.jpg" >
+				</div>
+				
+				<div class="right">
+					<div>商品名：华为手机</div>
+					<div>单价:<span>￥18999.01</span></div>
+					<div>数量: <input type="button" value="-" onclick="sup()"><input type="text" id="num1" size="4" value="0" onchange="changenum()"><input type="button" value="+" onclick="adp()"></div>
+					<div style="color: #666666;font-size: 14px;padding-left: 3em;line-height: 20px;">购买5件及以上打85折</div>
+					<div>总价格:<span id="price1">￥0</span></div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			function add(){
+				var num = document.getElementById("num").value;
+				num++;
+				document.getElementById("num").value  = num;
+				var price = num * 99.9;
+				if(num>=5){
+					price * 0.85;
+				}
+				document.getElementById("price").innerHTML = "￥" + price.toFixed(3);
+			}
+			function sub(){
+				var num = document.getElementById("num").value;
+				if(num==0){
+					return 0;
+				}
+				num--;
+				document.getElementById("num").value  = num;
+				var price = num * 99.9;
+				if(num>=5){
+					price * 0.85;
+				}
+				document.getElementById("price").innerHTML = "￥" + price.toFixed(3);
+				
+			}
+			function changeNum(){
+				var num = document.getElementById("num").value;
+				if(isNaN(num)){
+					num = 0;
+					document.getElementById("num").value = 0;
+				}
+				if(num<0){
+					num = 0;
+					document.getElementById("num").value = 0;
+				}
+				var price = num * 99.9;
+				if(num>=5){
+					price * 0.85;
+				}
+				document.getElementById("price").innerHTML = "￥" + price.toFixed(3);
+				
+			}
+			
+			function adp(){
+				var num = document.getElementById("num1").value;
+				num++;
+				document.getElementById("num1").value  = num;
+				var price = num * 18999.01;
+				if(num>=5){
+					price * 0.85;
+				}
+				document.getElementById("price1").innerHTML = "￥" + price.toFixed(3);
+			}
+			function sup(){
+				var num = document.getElementById("num1").value;
+				if(num==0){
+					return 0;
+				}
+				num--;
+				document.getElementById("num1").value  = num;
+				var price = num * 18999.01;
+				if(num>=5){
+					price * 0.85;
+				}
+				document.getElementById("price1").innerHTML = "￥" + price.toFixed(3);	
+			}
+			function changenum(){
+				var num = document.getElementById("num1").value;
+				if(isNaN(num)){
+					num = 0;
+					document.getElementById("num1").value = 0;
+				}
+				if(num<0){
+					num = 0;
+					document.getElementById("num1").value = 0;
+				}
+				var price = num * 18999.01;
+				if(num>=5){
+					price * 0.85;
+				}
+				document.getElementById("price1").innerHTML = "￥" + price.toFixed(3);
+				
+			}
+		</script>
+	</body>
+</html>

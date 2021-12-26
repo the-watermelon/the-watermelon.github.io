@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tmall首页</title>
+		<meta name="description" content="Tmall首页">						    <!-- 描述网页内容 -->
+		<meta name="author" content="赵光宇">             						<!--定义网页的作者-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	<!--设置网页尺寸自适应-->	
+		<link rel="icon" type="image/x-icon" href="天猫log.ico">
+		<style type="text/css">
+			header{
+				display: flex;	
+			}
+			.z{
+				background-color: #F2F2F2;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.w{
+				display: flex;
+				font-size: 1px;
+				text-decoration: none;
+				margin: 2px 10px 0px 10px;
+				color: #999999;
+			}
+			.w:hover{
+				color: red;
+				text-decoration: underline; /*添加下划线*/
+			}
+			.x{
+				display: flex;
+				font-size: 1px;
+				text-decoration: none;
+				margin: 2px 10px 0px 10px;
+				color: #999999;
+			}
+			.x:hover{
+				color: red;
+				text-decoration: underline; /*添加下划线*/
+			}
+			
+			.s{
+				font-size: 1px;
+				margin: 2px 10px 0px 10px;
+				color:  #999999;
+			}
+			
+			.c{
+				margin: 2px 10px 0px 370px;
+				font-size: 1px;
+				color: #999999;
+			}
+			
+			nav{
+				display: flex;
+				height: 15px;
+				width: 25%;
+				font-size: 1px;
+				position: relative;     /*相对定位方式*/
+				z-index: 50;            /*放一大一些的整数*/
+			}
+			nav div{
+				flex:1;
+				text-align: center;
+				margin: 2px 10px 0px 10px;			
+				height: 15px;
+				line-height: 15px;     /*垂直居中*/
+			}
+			nav ul{
+				list-style-type: none;
+				margin: 0;             /*自带外边距为0*/
+				margin-left: -2px;
+				padding: 0;            /*自带外边距为0*/
+				background-color: white;
+				display: none;
+			}
+			.main{
+				width:1224px;
+				margin:0px auto 0px auto;
+			  }
+			nav div>a{
+				color: #999999;
+			}
+			nav a{
+				display: block;
+				text-decoration: none;
+				color: #5a5a5a;
+			}
+			nav a:hover{
+				color: red;
+				text-decoration: underline; /*添加下划线*/
+			}
+			nav div:hover ul{
+				display: block;
+			}
+			nav .wd{
+				top: 0;
+				margin: 2px 0px 0px 120px;
+			}
+			.d{
+				font-size: 1px; 
+				margin: 2px 10px 0px 0px;
+				color: #999999;
+				text-decoration: none;
+			}
+			.d:hover{
+				color: red;
+				text-decoration: underline; /*添加下划线*/
+			}
+			.v{
+				font-size: 1px;
+				margin: 2px 10px 0px 20px;
+				color: #999999;
+				text-decoration: none;
+			}
+			.v:hover{
+				color: red;
+				text-decoration: underline; /*添加下划线*/
+			}
+			.hello{
+				display: flex;
+			}
+			.a input{
+				margin: 40px;
+				padding: 10px 250px 10px 10px;
+				border: 0;
+				outline: none;
+				border-radius: 20px;
+				border: solid 1px red;
+			}
+			.a{
+				display: flex;
+			}
+			.Butter{
+				position: absolute;
+				line-height: 25px;
+				margin: 40px 20px 20px 400px;
+				padding: 6px 35px 6px 35px;
+				cursor: pointer;              /*指针效果*/
+				background-color: red;
+				border-radius: 20px;
+				color: white;
+			}
+			.pl{
+				margin: 20px 180px 20px 25px;
+				color: red;
+				font-weight: bold;
+			}
+			.b{
+				margin:25px 10px 0px 5px;
+				color: black;
+				font-size: 13px;
+				text-decoration: none;
+			}
+			.b:hover{
+				color: red;
+			}
+			.class1{
+				width: 330px;
+				background-color: #ffffff;
+				height: 525px;
+			}
+			.t{
+				color: #afafaf;
+				text-decoration: none;
+				margin: 8px 2px 2px 2px;
+			}
+			.h{
+				text-decoration: none;
+				margin: 7px;
+				color: #afafaf;
+			}
+			.p{
+				text-decoration: none;
+				margin: 2px 5px 2px 5px;
+				color: #afafaf;
+			}
+			.t:hover{
+				color: red;
+			}
+			.l{
+				text-decoration: none;
+				margin: 1px;
+				color: #afafaf;
+				
+			}
+			.l:hover{
+				color: red;
+			}
+			.class2{
+				width: 670px;
+				background-color: #ffffff;
+				height: 525px;
+				border-radius: 10px;
+			}
+			#circle{
+				display: flex;
+				position: absolute;
+				margin: -25px 220px;
+				             
+			}
+			#circle div{
+				width: 15px;
+				height: 15px;
+				border: solid 1px #666666;
+				border-radius: 50%;
+				background-color: transparent;
+				margin-right: 3px;
+				width: 7px;
+				height: 7px;
+			}
+			#circle div.cur{
+				background-color: red;
+			}
+			.area{
+				position: relative;     /*相对定位*/
+			}
+			.area .fy{
+				display: flex;
+			}
+			.no1{
+				position: absolute;         /*绝对定位*/
+				margin: -122px 0px;		
+				background-color: transparent;   
+			}
+			.no2{
+				position: absolute;
+				margin: -122px 534px;
+				border-radius: 15px;
+				background-color: transparent;
+			}
+			.class3{
+				width: 450px;
+				background-color: #f3f3f3;
+				height: 525px;
+				border-radius: 15px;
+				margin:0px 0px 0px 15px;
+			}
+			.y{
+				margin: 20px 50px 0px 145px;
+				cursor: pointer;
+			}
+			.k{
+				margin: 5px 50px 0px 162px;
+				font-size: 4px;
+				cursor: pointer;
+				color: #595959;
+				cursor: pointer;
+			}
+			.m{
+				margin: 10px 5px 0px 20px;
+				cursor: pointer;
+			}
+			.p{
+				margin: 20px 5px 0px 5px;
+				font-size: 13px;				
+			}
+			.lm{
+				border: solid 1px red;
+				background-color: #f5e5e5;
+				color: red;
+				font-size: 10px;
+				cursor: pointer;
+				margin: 20px 2px 0px 5px;
+				border-style: none;
+			}
+			.j{
+				font-size: 10px;
+				cursor: pointer;
+				margin: 20px 2px 0px 3px;
+			}
+			.cno{
+				display: flex;
+				margin: 5px 280px 0px 280px;
+				font-size: 20px;
+				color: hotpink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="z">
+			<div class="main">
+				<header>
+					<img src="img/home.png" width="1%" style="margin:5px 0px 0px 40px ;" height="1%">
+					<a class="w" href="https://theshine.top/" target="_blank">天猫首页</a>
+					<div class="s">喵，欢迎来到天猫</div>
+					<a class="x" href="登录页面.html" target="_blank">请登录</a>
+					<a class="x" href="https://register.tmall.com/?spm=875.7931836.a2226mz.3.3fa14265CCmx1l" target="_blank">免费注册</a>
+				
+					<nav>
+						<div class="wd"><a href="#">我的淘宝</a>
+							<ul>
+								<li><a href="商品价格.html">已买到的宝贝</a></li>
+								<li><a href="https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Ftrade.taobao.com%2Ftrade%2Fitemlist%2Flist_sold_items.htm%3Fspm%3D875.7931836.a2226mz.6.66144265tuwgeo%26t%3D20110530">已卖出的的宝贝</a></li>
+							</ul>
+						</div>
+						<div class="hc"><a href="">收藏夹</a>
+							<ul>
+								<li><a href="https://login.taobao.com/member/login.jhtml?from=taobaoindex&f=top&style=&sub=true&redirect_url=https%3A%2F%2Fshoucang.taobao.com%2Fitem_collect_n.htm%3Fspm%3D875.7931836.a2226mz.10.66144265eSsrTE">收藏的宝贝</a></li>
+								<li><a href="https://login.taobao.com/member/login.jhtml?from=taobaoindex&f=top&style=&sub=true&redirect_url=https%3A%2F%2Fshoucang.taobao.com%2Fitem_collect_n.htm%3Fspm%3D875.7931836.a2226mz.10.66144265eSsrTE">收藏的店铺</a></li>
+							</ul>
+						</div>
+					</nav>
+					
+					<img src="img/购物车.png" style="margin: 2px 0px 0px 12px; width: 14px; height: 14px;">
+					<a class="d" href="https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fcart.tmall.com%2Fcart%2FmyCart.htm%3Fspm%3D875.7931836.a2226mz.8.66144265b3gS0Y%26from%3Dbtop" >购物车</a>		
+					<div style="border-right: solid 1px #999999;"></div>
+					
+					<a href="https://www.taobao.com/?spm=875.7931836.a2226mz.13.66144265O5rn0Q" class="v">淘宝网</a>
+					<a href="#" class="v">商家支持</a>
+				</header>		
+			</div>
+		</div>
+		
+		<div style="background-color: #f6e4e4;">
+			<div class="main">
+				<article>
+					<div class="hello">
+						<img src="img/小天.png" style="margin: 30px 110px 0px 40px; width: 75px; height: 55px;">
+						<div class="a">	
+							<input type="text" name="condition" placeholder="搜索 天猫 商品/品牌/店铺">
+							<div class="Butter" style="white-space: nowrap;">搜索</div>					
+						</div>
+					</div>
+										
+					<div style="background-color: white; border-radius: 15px;">					
+						<div class="hello">
+							<div class="pl">主题市场</div>
+							<img src="img/天猫超市.png" width="10%" height="10%" style="margin:15px 20px 0px 0px; cursor: pointer;">
+							<img src="img/天猫国际.png" width="10%" height="10%" style="margin:15px 10px 0px 0px; cursor: pointer;">
+							<a class="b" href="#" >天猫会员</a>
+							<a class="b" href="#" >喵先生</a>
+							<a class="b" href="#" >医药馆</a>
+							<a class="b" href="#" >魅力惠</a>
+							<a class="b" href="#" >飞猪旅行</a>
+							<a class="b" href="#" >苏宁易购</a>
+							<a class="b" href="#" >天猫内容</a>
+						</div>
+				
+						<div class="hello">
+							<div class="class1">
+								<div class="hello">
+									<img src="img/裙子.png" width="7%" height="5%" style="margin: 9px 12px 0px 20px;">
+									<a href="#" class="t">女装</a>
+									<div class="h">/</div>
+									<a href="#" class="t">内衣</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/半袖.png" width="6%" style="margin: 10px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 10px 0px 0px 0px;">男装</a>
+									<div class="p" style="margin: 10px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 10px 0px 0px 0px;">运动户外</a>
+								</div>
+								
+								<div class="hello">
+									<img src="./img/鞋.png" width="6%" height=25px style="margin: 12px 12px 5px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">女鞋</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">男鞋</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">箱包</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/口红.png" width="7%" height=25px style="margin: 6px 12px 4px 18px;">
+									<a href="#" class="l" style="margin: 10px 0px 0px 0px;">美妆</a>
+									<div class="p" style="margin: 10px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 10px 0px 0px 0px;">个人护理</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/钻石.png" width="5%" height=22px style="margin: 13px 12px 0px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">腕表</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">眼镜</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">珠宝饰品</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/手机.png" width="5%" height=20px style="margin: 13px 12px 0px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">手机</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">数码</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">电脑办公</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/婴儿车.png" width="5%" height=25px style="margin: 6px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">母婴玩具</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/方便面.png" width="5%" height=25px style="margin: 6px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">零食</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">茶酒</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">进口食品</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/冰箱.png" width="5%" height=23px style="margin: 10px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">大家电</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">生活电器</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/九宫格.png" width="5%" height=20px style="margin: 13px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">家电</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">灯具</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">卫浴</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/汽车.png" width="5%" height=25px style="margin: 6px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">汽车</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">配件</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">用品</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/沙发.png" width="5%" height=20px style="margin: 6px 12px 4px 20px;">
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">家纺</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">家饰</a>
+									<div class="p" style="margin: 13px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 13px 0px 0px 0px;">鲜花</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/药.png" width="5%" height=23px style="margin: 6px 12px 0px 20px;">
+									<a href="#" class="l" style="margin: 10px 0px 0px 0px;">医药保健</a>
+								</div>
+								
+								<div class="hello">
+									<img src="./img/咖啡.png" width="5%" height=20px style="margin: 6px 12px 0px 20px;">
+									<a href="#" class="l" style="margin: 9px 0px 0px 0px;">厨具</a>
+									<div class="p" style="margin: 9px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 9px 0px 0px 0px;">收纳</a>
+									<div class="p" style="margin: 9px 5px 0px 5px;">/</div>
+									<a href="#" class="l" style="margin: 9px 0px 0px 0px;">宠物</a>
+								</div>
+								
+								<div class="hello">
+									<img src="img/CD.png" width="5%" height=20px style="margin: 9px 12px 0px 20px;">
+									<a href="#" class="l" style="margin: 9px 0px 0px 0px;">图书音像</a>
+								</div>
+							</div>
+												
+							<div class="class2">
+								<div class="area">						
+									<div><img id="lb" src="img/第一张图.png" style="width: 99%; height: 280px; border-radius: 15px;"></div>
+									<div id="circle"></div>	
+								</div>
+		
+								<div class="area">										
+									<div><img id="ti" src="img/第六张图.png" style="width: 99%; margin: 35px 0px 0px 0px; "></div>
+									<div class="fy">
+										<div class="no1" onclick="nextPage_left()"><img id="left" src="img/翻页左.png" style="width: 16px;"></div>																												
+										<div class="no2" onclick="nextPage_right()"><img id="right" src="img/翻页右.png" style="width: 17px;"></div>
+									</div>											
+								</div>
+							</div>
+						
+							<script>
+								var imgs = [
+									{ filename:"第一张图.png" },
+									{ filename:"第二张图.png" },
+									{ filename:"第三张图.png" },
+									{ filename:"第四张图.png" },
+									{ filename:"第五张图.png" }
+								];
+								var cur=0;
+								var fID; 
+								function lb(){
+									cur++;
+									if(cur==imgs.length){
+										cur = 0 ;
+									}
+									document.getElementById("lb").src = "img/"+imgs[cur].filename;
+									setCircle();
+								}
+								fID = setInterval("lb()",3000);
+								function setCircle(){
+									var s = "" ;
+									for(var i in imgs){
+										if(i == cur){
+											s += '<div class="cur" onclick="changeImg('+i+')"></div>';
+										}else{
+											s += '<div onclick="changeImg('+i+')"></div>';
+										}					
+									}
+									document.getElementById("circle").innerHTML = s;
+								}
+								setCircle();
+								function changeImg(k){
+									clearInterval(fID);
+									cur = k ;
+									document.getElementById("lb").src = "img/"+imgs[cur].filename;
+									setCircle();
+									fID = setInterval("lb()",3000);
+								}
+							</script>
+													
+							<script type="text/javascript">
+								var curNo = 1;
+								
+								var im = [
+									{ filename:"第六张图.png" },
+									{ filename:"第七张图.png" },
+									{ filename:"第八张图.png" },
+									{ filename:"第九张图.png" }
+								];
+								function setCurPage(){								
+									if ( curNo == 0 ) curNo = 4 ;
+									else if ( curNo == 5 ) curNo = 1 ;
+									document.getElementById("ti").src = "img/" + im[curNo-1].filename;								
+								}
+								function nextPage_right(){
+									curNo++;
+									setCurPage();
+								}
+								function nextPage_left(){
+									curNo--;
+									setCurPage();
+								}
+								setInterval("nextPage_right()",4000);
+							</script>	
+											
+							<div class="class3" style="margin: 0 10px;">
+								<div class="y"><img src="img/天猫小人.png" ></div>
+								<div class="k">Hi! 你好</div>
+								<div class="m"><img src="img/双十二.png" style="width: 95%; height: 120px;"></div>	
+								<div class="p"><strong>公告</strong> 新鲜事儿都在这里～</div>
+								
+								<div style="display: flex;">
+									<div class="lm">热点</div>																	
+									<div class="j">热点设计创享家3D设计服务大赛来袭！</div>								
+								</div>
+								
+								<div style="display: flex;">
+									<div class="lm">热点</div>																	
+									<div class="j">热点全球新发现，好物开抢就现在！</div>								
+								</div>
+								
+								<div style="display: flex;">
+									<div class="lm">热点</div>																	
+									<div class="j">万款新品流行速递抢先看</div>								
+								</div>
+								
+								<div style="display: flex;">
+									<div style="margin: 40px 0px 0px 10px; cursor: pointer;"><img src="img/宝贝.png" style="width: 90%; "></div>
+									<div style="margin: 40px 0px 0px 0px; cursor: pointer;"><img src="img/店铺.png" style="width: 90%; "></div>
+									<div style="margin: 40px 0px 0px 0px; cursor: pointer;"><img src="img/收藏店铺.png" style="width: 90%; "></div>
+									<div style="margin: 40px 0px 0px 0px; cursor: pointer;"><img src="img/足迹.png" style="width: 90%; "></div>								
+								</div>
+							</div>
+						</div>
+					</div>
+							
+					<div style="background-color: white;">
+						<img src="img/超市.png" style="margin: 30px;">
+					</div>
+					
+					<div style="background-color: white; ">
+						<img src="img/草莓.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="./img/盒茶.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/卫生纸.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/豆汁.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/蓝月亮.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer;">唐妖冻干水果干草莓脆30g...</div>
+							<div style="margin-left: 40px; margin-top: 5px;cursor: pointer;">日式脂流茶5g*30清荷叶茶...</div>	
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">包邮 丽邦 抽纸 生活4层280...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">圣诞美味豆本豆豆奶唯甄原...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">蓝月亮亮白洗衣液机洗整箱...</div>
+						</div>
+						
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;19.6</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;59</div>	
+							<div style="margin-left: 200px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;29.9</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;9.9</div>
+							<div style="margin-left: 200px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;99.9</div>
+						</div>
+					</div>	
+					
+					<div style="background-color: white; ">
+						<img src="img/拖鞋.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/牙刷.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/棉签.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/酸奶块.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/抽纸.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer;">【拾来九八】EVA浴室家居...</div>
+							<div style="margin-left: 40px; margin-top: 5px;cursor: pointer;">德国进口宝儿德儿童换牙期...</div>	
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">一次性双头棉签婴儿掏耳朵...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">伊利新食机酸奶果粒块40g...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">名创优品A款洗脸巾100抽...</div>
+						</div>
+						
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;9.8</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;12.9</div>	
+							<div style="margin-left: 200px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;1</div>
+							<div style="margin-left: 215px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;29.9</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;10.8</div>
+						</div>
+					</div>
+					
+					<div style="background-color: white; display: flex;">	
+						<img src="img/国际.png" style="cursor: pointer; margin: 30px;">
+						<a href="天猫国际.html" style="font-size: 30px;margin:35px 0 0 20px;">请点击这里到天猫国际</a>
+					</div>	
+					
+					<div style="background-color: white; ">
+						<img src="img/拖鞋.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/牙刷.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/棉签.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/酸奶块.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/抽纸.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer;">【拾来九八】EVA浴室家居...</div>
+							<div style="margin-left: 40px; margin-top: 5px;cursor: pointer;">德国进口宝儿德儿童换牙期...</div>	
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">一次性双头棉签婴儿掏耳朵...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">伊利新食机酸奶果粒块40g...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">名创优品A款洗脸巾100抽...</div>
+						</div>
+						
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;9.8</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;12.9</div>	
+							<div style="margin-left: 200px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;1</div>
+							<div style="margin-left: 215px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;29.9</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;10.8</div>
+						</div>
+					</div>
+					
+					<div style="background-color: white; ">
+						<img src="img/草莓.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="./img/盒茶.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/卫生纸.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/豆汁.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<img src="img/蓝月亮.png" style="border-radius: 20px; width: 17%; margin-left: 25px;cursor: pointer;">
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer;">唐妖冻干水果干草莓脆30g...</div>
+							<div style="margin-left: 40px; margin-top: 5px;cursor: pointer;">日式脂流茶5g*30清荷叶茶...</div>	
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">包邮 丽邦 抽纸 生活4层280...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">圣诞美味豆本豆豆奶唯甄原...</div>
+							<div style="margin-left: 35px; margin-top: 5px;cursor: pointer;">蓝月亮亮白洗衣液机洗整箱...</div>
+						</div>
+						
+						<div style="display: flex;">
+							<div style="margin-left: 25px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;19.6</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;59</div>	
+							<div style="margin-left: 200px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;29.9</div>
+							<div style="margin-left: 190px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;9.9</div>
+							<div style="margin-left: 200px; margin-top: 5px;cursor: pointer; font-size: 20px; color: red;">&yen;99.9</div>
+						</div>
+						
+						<div style="border-bottom: 3px solid black; padding-bottom: 60px;"></div>
+					</div>		
+				</article>
+			</div>
+		</div>	
+		
+		<div class="main">
+			<div style="display: flex;">
+				<img src="./img/排列.png" width="70%" style="margin-left: 150px; margin-top: 30px; cursor: pointer;">
+			</div>
+		</div>				
+	
+		<div style="border-bottom: 2px solid gray; padding-bottom: 20px;"></div>
+		
+		<div style="display: flex;">
+			<div style="width: 300px; margin-left: 200px; margin-top: 20px;">购物指南
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">免费注册</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">开通支付宝</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">支付宝充值</div>
+			</div>
+			
+			
+			
+			<div style="width: 300px;margin-top: 20px;">天猫保障
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">发票保障</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">售后规则</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">物流时效保障</div>
+			</div>
+			
+			<div style="width: 300px;margin-top: 20px;">支付方式
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">快捷支付</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">信用卡</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">余额宝</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">蚂蚁花呗</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">货到付款</div>
+			</div>
+			
+			<div style="width: 300px;margin-top: 20px;">商家服务
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">天猫规则</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">天猫入驻</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">商家中心</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">天猫必修课</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">喵言喵语</div>
+				<div style="cursor: pointer;font-size: 3px;margin-top: 5px;color: #808080;">运营服务</div>
+			</div>
+			
+			<div style="width: 300px;margin-top: 20px;">手机天猫</div>
+				<img src="img/天猫二维码.png" width="100px" style="position: absolute;margin:40px 0 10px 1250px;">
+			
+		</div>
+			
+		
+		
+		<div>
+			<img src="img/猫头.png" style="width: 5%; margin-left: 300px; margin-top: 15px; vertical-align: top;">
+			<div style="border-bottom: 3px solid red; "></div>
+			<div style="background-color: black; width: 1519px; height: 220px;">
+				<div style="display: flex; color: white;">
+					<div style="margin: 10px 0px 0px 200px; font-size: 2px;cursor: pointer;">关于天猫</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">商家服务大厅</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">开放平台</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">诚聘英才</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">联系我们</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">网站合作</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">法律声明</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">隐私权政策</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">知识产权</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">廉正举报</div>
+					<div style="margin: 10px 0px 0px 20px; font-size: 2px;cursor: pointer;">不当竞争举报</div>
+				</div>
+				
+				<div style="display: flex;color: white;" >
+					<div style="margin: 20px 0px 0px 200px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">阿里巴巴集团</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">淘宝网</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">天猫</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">聚划算</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">全球速卖通</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">阿里巴巴国际交易市场</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">1688</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">阿里妈妈</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">飞猪</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">阿里云计算</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">AliOS</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">阿里通信</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">万网</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">高德</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">UC</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">友盟</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">虾米</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">钉钉</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;border-right: 1px solid white;">支付宝</div>
+					<div style="margin: 20px 0px 0px 20px; font-size: 2px;cursor: pointer;">阿里安全</div>
+				</div>
+					
+				<div style="display: flex;color: white;" >
+					<div style="margin: 20px 100px 0px 200px; font-size: 2px;cursor: pointer;">增值电信业务经营许可证：浙B2-20110446</div>
+					<div style="margin: 20px 100px 0px 20px; font-size: 2px;cursor: pointer;">市场名称登记证：工商网市字3301004119号</div>
+					<div style="margin: 20px 100px 0px 20px; font-size: 2px;cursor: pointer;">出版物网络交易平台服务经营备案证： 新出发浙备字第2019002号</div>
+				</div>
+				
+				<div style="display: flex;color: white;" >
+					<div style="margin: 15px 100px 0px 200px; font-size: 2px;cursor: pointer;">互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com</div>
+					<div style="margin: 15px 100px 0px 20px; font-size: 2px;cursor: pointer;">互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005</div>
+					<img src="img/公安.png" style="width: 30px;">
+					<div style="margin: 15px 100px 0px 0px; font-size: 2px;cursor: pointer;">浙公网安备 33010002000120号</div>
+				</div>
+				
+				<div>
+					<div style="margin: 5px 100px 0px 200px; font-size: 2px;cursor: pointer;">医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号</div>
+				</div>
+				
+				<div style="display: flex;color: white;">
+					<div style="margin: 5px 100px 0px 200px; font-size: 2px;cursor: pointer;">浙江省网络食品销售第三方平台提供者备案：浙网食A33010002</div>
+					<div style="margin: 5px 100px 0px 20px; font-size: 2px;cursor: pointer;"> 12318举报</div>
+					<div style="margin: 5px 100px 0px 20px; font-size: 2px;cursor: pointer;"> 浙B2-20110446-1</div>
+				</div>
+				
+				<div style="margin: 5px 100px 20px 200px; font-size: 2px;cursor: pointer;color: white;">
+					2003-现在 TMALL.COM 版权所有
+				</div>
+			</div>
+		</div>
+		
+		
+		<footer>
+			<div>
+				<div class="main">
+					<div class="cno">
+						<div>学号:2014127037&nbsp;&nbsp;	</div>
+						<div>姓名:赵光宇&nbsp;&nbsp;</div>
+						<div>班级:20外包班</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+	</body>
+</html>
